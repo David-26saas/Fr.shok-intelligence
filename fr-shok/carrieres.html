@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14'><rect fill='%236366F1' x='2' y='2' width='4' height='4'/><rect fill='%236366F1' x='8' y='2' width='4' height='4'/><rect fill='%236366F1' x='2' y='8' width='4' height='4'/></svg>">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carrières — Shok Intelligence Systems</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+.careers-hero{padding:100px 0 80px;border-bottom:1px solid var(--border);}
+.perks-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:80px 0;border-bottom:1px solid var(--border);}
+.perk-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px;}
+.perk-icon{font-size:28px;margin-bottom:12px;}
+.perk-title{font-size:14px;font-weight:600;color:var(--heading);margin-bottom:6px;}
+.perk-desc{font-size:13px;color:var(--text);line-height:1.65;}
+.jobs-section{padding:80px 0;}
+.job-dept{margin-bottom:48px;}
+.job-dept-title{font-size:13px;font-weight:700;color:var(--cyan);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:20px;display:flex;align-items:center;gap:8px;}
+.job-dept-title::before{content:'';width:20px;height:1px;background:var(--cyan);}
+.job-item{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px 28px;display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;transition:border-color 0.2s,transform 0.2s;cursor:pointer;}
+.job-item:hover{border-color:var(--indigo-glow);transform:translateX(4px);}
+.job-title{font-size:15px;font-weight:600;color:var(--heading);margin-bottom:6px;}
+.job-tags{display:flex;gap:8px;flex-wrap:wrap;}
+.job-tag{font-size:11px;color:var(--muted);background:var(--surface2);border:1px solid var(--border);padding:3px 10px;border-radius:999px;}
+.job-tag.remote{color:var(--green);border-color:rgba(16,185,129,0.3);background:rgba(16,185,129,0.08);}
+.job-arrow{color:var(--indigo);font-size:18px;flex-shrink:0;}
+.values-band{background:linear-gradient(135deg,var(--indigo-dim),var(--cyan-dim));border:1px solid var(--border);border-radius:20px;padding:60px;text-align:center;margin-bottom:80px;}
+@media(max-width:768px){.perks-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+<div class="page-wrap">
+<div class="container">
+
+  <div class="careers-hero fadein">
+    <div class="section-label">Carrières</div>
+    <h1>Construisez la Couche d'Infrastructure<br>pour l'IA de Production.</h1>
+    <p style="font-size:18px;max-width:580px;margin-top:16px;">Nous sommes une équipe restreinte et concentrée qui bâtit une infrastructure sérieuse. Si vous vous souciez profondément de la conception d'API, des systèmes distribués et de l'expérience développeur — nous voulons vous entendre.</p>
+    <div style="display:flex;gap:16px;margin-top:36px;flex-wrap:wrap;">
+      <div style="font-size:13px;color:var(--text);display:flex;align-items:center;gap:8px;"><span style="color:var(--green);">●</span> 12 personnes dans le monde</div>
+      <div style="font-size:13px;color:var(--text);display:flex;align-items:center;gap:8px;"><span style="color:var(--green);">●</span> Remote en premier</div>
+      <div style="font-size:13px;color:var(--text);display:flex;align-items:center;gap:8px;"><span style="color:var(--green);">●</span> Siège social à Londres, Royaume-Uni</div>
+    </div>
+  </div>
+
+  <div class="perks-grid fadein">
+    <div class="perk-card"><div class="perk-icon">🌍</div><div class="perk-title">Remote en premier</div><div class="perk-desc">Travaillez de n'importe où. Nos membres d'équipe sont répartis au Royaume-Uni, en UE et en Amérique du Nord. Asynchrone par défaut.</div></div>
+    <div class="perk-card"><div class="perk-icon">💶</div><div class="perk-title">Rémunération compétitive</div><div class="perk-desc">Salaire de base au niveau du marché, options d'actions et primes de performance annuelles alignées sur les tarifs Londres/SF.</div></div>
+    <div class="perk-card"><div class="perk-icon">🏥</div><div class="perk-title">Assurance santé privée</div><div class="perk-desc">Couverture médicale privée complète pour vous et votre famille via Bupa. Soins dentaires et optiques inclus.</div></div>
+    <div class="perk-card"><div class="perk-icon">📚</div><div class="perk-title">Budget formation</div><div class="perk-desc">2 000 £/an pour les conférences, formations, livres et certifications. Nous finançons votre développement professionnel continu.</div></div>
+    <div class="perk-card"><div class="perk-icon">🛠️</div><div class="perk-title">Équipement de premier choix</div><div class="perk-desc">MacBook Pro M4, clavier mécanique, écran 4K — tout ce qu'il vous faut pour donner le meilleur. Budget bureau à domicile de 1 500 £.</div></div>
+    <div class="perk-card"><div class="perk-icon">✈️</div><div class="perk-title">Séminaires d'équipe</div><div class="perk-desc">Deux rassemblements complets par an. Destinations précédentes : Édimbourg, Lisbonne. À venir : Copenhague.</div></div>
+  </div>
+
+  <div class="jobs-section fadein">
+    <h2 style="margin-bottom:48px;">Postes Ouverts</h2>
+
+    <div class="job-dept">
+      <div class="job-dept-title">Ingénierie</div>
+      <div class="job-item"><div class="job-info"><div class="job-title">Ingénieur Backend Senior — Plateforme d'Inférence</div><div class="job-tags"><span class="job-tag">Go / Rust</span><span class="job-tag">Systèmes Distribués</span><span class="job-tag remote">Remote</span><span class="job-tag">95–120K £</span></div></div><div class="job-arrow">→</div></div>
+      <div class="job-item"><div class="job-info"><div class="job-title">Staff Engineer — Infrastructure API</div><div class="job-tags"><span class="job-tag">Python / Go</span><span class="job-tag">Conception API</span><span class="job-tag remote">Remote</span><span class="job-tag">120–150K £</span></div></div><div class="job-arrow">→</div></div>
+      <div class="job-item"><div class="job-info"><div class="job-title">Ingénieur Infrastructure ML</div><div class="job-tags"><span class="job-tag">Python</span><span class="job-tag">PyTorch</span><span class="job-tag remote">Remote</span><span class="job-tag">90–115K £</span></div></div><div class="job-arrow">→</div></div>
+    </div>
+
+    <div class="job-dept">
+      <div class="job-dept-title">Sécurité</div>
+      <div class="job-item"><div class="job-info"><div class="job-title">Ingénieur Sécurité Applicative</div><div class="job-tags"><span class="job-tag">Tests de pénétration</span><span class="job-tag">SOC 2</span><span class="job-tag remote">Remote / Londres</span><span class="job-tag">85–110K £</span></div></div><div class="job-arrow">→</div></div>
+    </div>
+
+    <div class="job-dept">
+      <div class="job-dept-title">Produit &amp; Design</div>
+      <div class="job-item"><div class="job-info"><div class="job-title">Designer Produit — Expérience Développeur</div><div class="job-tags"><span class="job-tag">Figma</span><span class="job-tag">Systèmes de Design</span><span class="job-tag remote">Remote</span><span class="job-tag">70–90K £</span></div></div><div class="job-arrow">→</div></div>
+      <div class="job-item"><div class="job-info"><div class="job-title">Product Manager Technique</div><div class="job-tags"><span class="job-tag">Produits API</span><span class="job-tag">SaaS B2B</span><span class="job-tag remote">Remote / Londres</span><span class="job-tag">80–105K £</span></div></div><div class="job-arrow">→</div></div>
+    </div>
+
+    <div class="job-dept">
+      <div class="job-dept-title">Go-To-Market</div>
+      <div class="job-item"><div class="job-info"><div class="job-title">Ingénieur Relations Développeurs</div><div class="job-tags"><span class="job-tag">Rédaction Technique</span><span class="job-tag">Communauté</span><span class="job-tag remote">Remote</span><span class="job-tag">65–85K £</span></div></div><div class="job-arrow">→</div></div>
+    </div>
+  </div>
+
+  <div class="values-band fadein">
+    <h2 style="font-size:32px;margin-bottom:12px;">Vous ne voyez pas le bon poste ?</h2>
+    <p style="font-size:16px;max-width:480px;margin:0 auto 28px;">Nous recrutons avant tout pour des personnes exceptionnelles, les postes viennent ensuite. Envoyez-nous votre CV et dites-nous ce que vous souhaitez construire.</p>
+    <a href="mailto:contact@shok-intelligence.com" class="btn-primary">Envoyer une candidature spontanée →</a>
+  </div>
+
+</div>
+</div>
+<div id="footer-placeholder"></div>
+<script src="shared.js"></script>
+</body>
+</html>
