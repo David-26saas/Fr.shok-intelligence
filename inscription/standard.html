@@ -150,11 +150,11 @@ let isAnnual = false;
 
 function toggleBilling() {
   isAnnual = document.getElementById('annualToggle').checked;
-  document.getElementById('displayPrice').textContent = isAnnual ? '€55' : '€69';
+  document.getElementById('displayPrice').textContent = isAnnual ? '€44,90' : '€49,90';
   document.getElementById('displayPeriod').textContent = isAnnual ? '/mois, facturé annuellement' : '/mois';
   document.getElementById('priceDisplay').textContent = isAnnual
-    ? 'Annuel — €663/an · Économisez €165 · 14 premiers jours gratuits'
-    : 'Mensuel — €69,00/mois · 14 premiers jours gratuits';
+    ? 'Annuel — €538/an · Économisez €60 · 14 premiers jours gratuits'
+    : 'Mensuel — €49,90/mois · 14 premiers jours gratuits';
 }
 
 function goToStripe() {
