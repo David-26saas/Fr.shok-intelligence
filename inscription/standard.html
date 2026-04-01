@@ -103,7 +103,7 @@ input:checked + .toggle-slider::before{transform:translateX(18px);}
       <div class="toggle-row">
         <div>
           <div class="toggle-label">Facturation annuelle</div>
-          <div class="toggle-save">Économisez 20 % — €663/an</div>
+          <div class="toggle-save">Économisez 20 % — €478/an</div>
         </div>
         <label class="toggle-switch">
           <input type="checkbox" id="annualToggle" onchange="toggleBilling()">
@@ -112,7 +112,7 @@ input:checked + .toggle-slider::before{transform:translateX(18px);}
       </div>
 
       <div class="price-display" id="priceDisplay">
-        Mensuel — €69,00/mois · 14 premiers jours gratuits
+        Mensuel — €49,90/mois 
       </div>
 
       <div class="form-group">
@@ -150,10 +150,10 @@ let isAnnual = false;
 
 function toggleBilling() {
   isAnnual = document.getElementById('annualToggle').checked;
-  document.getElementById('displayPrice').textContent = isAnnual ? '€44,90' : '€49,90';
+  document.getElementById('displayPrice').textContent = isAnnual ? '€39,90' : '€49,90';
   document.getElementById('displayPeriod').textContent = isAnnual ? '/mois, facturé annuellement' : '/mois';
   document.getElementById('priceDisplay').textContent = isAnnual
-    ? 'Annuel — €538/an · Économisez €60 · 14 premiers jours gratuits'
+    ? 'Annuel — €478/an · Économisez €120 · 14 premiers jours gratuits'
     : 'Mensuel — €49,90/mois · 14 premiers jours gratuits';
 }
 
