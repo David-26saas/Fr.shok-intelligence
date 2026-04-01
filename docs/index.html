@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14'><rect fill='%236366F1' x='2' y='2' width='4' height='4'/><rect fill='%236366F1' x='8' y='2' width='4' height='4'/><rect fill='%236366F1' x='2' y='8' width='4' height='4'/></svg>">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Référence API — Shok-Intelligence Systems</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared.css">
+<style>
+.docs-layout{display:grid;grid-template-columns:260px 1fr;gap:0;padding-top:64px;min-height:100vh;}
+.docs-sidebar{position:sticky;top:64px;height:calc(100vh - 64px);overflow-y:auto;border-right:1px solid var(--border);padding:32px 0;}
+.docs-sidebar::-webkit-scrollbar{width:3px;}
+.sidebar-section{margin-bottom:28px;}
+.sidebar-section-title{font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.15em;padding:0 24px;margin-bottom:8px;}
+.sidebar-link{display:block;font-size:13px;color:var(--muted);text-decoration:none;padding:7px 24px;transition:all 0.15s;border-left:2px solid transparent;}
+.sidebar-link:hover{color:var(--heading);background:rgba(255,255,255,0.02);}
+.sidebar-link.active{color:var(--cyan);border-left-color:var(--cyan);background:var(--cyan-dim);}
+.sidebar-link .badge-sm{font-size:9px;font-weight:700;padding:1px 6px;border-radius:3px;margin-left:8px;text-transform:uppercase;}
+.badge-post{background:rgba(99,102,241,0.2);color:#818CF8;}
+.badge-get{background:rgba(16,185,129,0.2);color:var(--green);}
+.badge-del{background:rgba(239,68,68,0.2);color:var(--red);}
+.docs-content{padding:48px 60px 100px;max-width:900px;}
+.docs-section{margin-bottom:72px;scroll-margin-top:84px;}
+.endpoint-block{background:#0D0D10;border:1px solid var(--border);border-radius:14px;overflow:hidden;margin:20px 0;}
+.endpoint-header{display:flex;align-items:center;gap:12px;padding:16px 20px;border-bottom:1px solid var(--border);}
+.method-tag{font-size:11px;font-weight:700;padding:4px 10px;border-radius:6px;font-family:'JetBrains Mono',monospace;}
+.method-post{background:rgba(99,102,241,0.2);color:#818CF8;}
+.method-get{background:rgba(16,185,129,0.2);color:var(--green);}
+.method-delete{background:rgba(239,68,68,0.2);color:var(--red);}
+.endpoint-path{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--heading);}
+.endpoint-desc{font-size:12px;color:var(--muted);margin-left:auto;}
+.code-block-docs{padding:20px 24px;font-family:'JetBrains Mono',monospace;font-size:12px;line-height:1.9;overflow-x:auto;color:var(--text);}
+.code-block-docs .kw{color:#818CF8;}
+.code-block-docs .str{color:#86EFAC;}
+.code-block-docs .num{color:#FCA5A5;}
+.code-block-docs .key{color:var(--cyan);}
+.code-block-docs .val{color:#FCD34D;}
+.code-block-docs .comment{color:var(--muted);}
+.params-table{width:100%;border-collapse:collapse;margin:16px 0;}
+.params-table th{background:var(--surface2);padding:10px 14px;font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;text-align:left;}
+.params-table td{padding:12px 14px;font-size:13px;border-bottom:1px solid var(--border);vertical-align:top;}
+.params-table tr:last-child td{border-bottom:none;}
+.param-name{font-family:'JetBrains Mono',monospace;color:var(--cyan);font-size:12px;}
+.param-type{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);background:var(--surface2);padding:2px 6px;border-radius:4px;}
+.param-req{font-size:10px;font-weight:700;color:var(--red);text-transform:uppercase;}
+.param-opt{font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;}
+.alert-box{border-radius:10px;padding:14px 18px;margin:16px 0;font-size:13px;line-height:1.65;}
+.alert-info{background:var(--indigo-dim);border:1px solid rgba(99,102,241,0.3);color:#C7D0F0;}
+.alert-warn{background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.3);color:#FCD34D;}
+.docs-intro{font-size:15px;color:var(--text);line-height:1.8;margin-bottom:24px;max-width:680px;}
+.auth-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin:16px 0;display:flex;gap:16px;align-items:flex-start;}
+.auth-icon{font-size:24px;}
+@media(max-width:768px){.docs-layout{grid-template-columns:1fr;}.docs-sidebar{display:none;}.docs-content{padding:32px 20px;}}
+</style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<div class="docs-layout">
+
+  <!-- SIDEBAR -->
+  <div class="docs-sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Démarrage rapide</div>
+      <a href="#overview" class="sidebar-link active">Vue d'ensemble</a>
+      <a href="#auth" class="sidebar-link">Authentification</a>
+      <a href="#errors" class="sidebar-link">Codes d'erreur</a>
+      <a href="#rate-limits" class="sidebar-link">Limites de débit</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Prédictions</div>
+      <a href="#predict" class="sidebar-link"><span class="badge-sm badge-post">POST</span> /v1/predict</a>
+      <a href="#predict-batch" class="sidebar-link"><span class="badge-sm badge-post">POST</span> /v1/predict/batch</a>
+      <a href="#predict-get" class="sidebar-link"><span class="badge-sm badge-get">GET</span> /v1/predict/:id</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Modèles</div>
+      <a href="#models-list" class="sidebar-link"><span class="badge-sm badge-get">GET</span> /v1/models</a>
+      <a href="#models-get" class="sidebar-link"><span class="badge-sm badge-get">GET</span> /v1/models/:id</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Webhooks</div>
+      <a href="#webhooks" class="sidebar-link"><span class="badge-sm badge-post">POST</span> /v1/webhooks</a>
+      <a href="#webhooks-list" class="sidebar-link"><span class="badge-sm badge-get">GET</span> /v1/webhooks</a>
+      <a href="#webhooks-del" class="sidebar-link"><span class="badge-sm badge-del">DEL</span> /v1/webhooks/:id</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">SDKs</div>
+      <a href="#sdk-python" class="sidebar-link">SDK Python</a>
+      <a href="#sdk-node" class="sidebar-link">SDK Node.js</a>
+      <a href="#sdk-go" class="sidebar-link">SDK Go</a>
+    </div>
+  </div>
+
+  <!-- CONTENU -->
+  <div class="docs-content">
+
+    <div class="docs-section fadein" id="overview">
+      <div class="section-label">Référence API</div>
+      <h1 style="font-size:40px;margin-bottom:16px;">Documentation Développeurs</h1>
+      <p class="docs-intro">L'API Shok-IS suit les principes REST. Elle expose des URLs orientées ressources, accepte des corps de requête encodés en JSON, retourne des réponses JSON et utilise les codes HTTP standard ainsi qu'une authentification par token.</p>
+      <div class="alert-info alert-box">🔗 <strong>URL de base :</strong> <code style="font-family:'JetBrains Mono',monospace;">https://api.shok-is.com</code> &nbsp;·&nbsp; Toutes les requêtes doivent utiliser <strong>HTTPS</strong>. HTTP n'est pas supporté.</div>
+
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px;">
+        <div class="auth-card"><div class="auth-icon">📄</div><div><div style="font-size:13px;font-weight:600;color:var(--heading);margin-bottom:4px;">Schéma OpenAPI</div><a href="#" style="font-size:12px;">Télécharger .yaml →</a></div></div>
+        <div class="auth-card"><div class="auth-icon">🧪</div><div><div style="font-size:13px;font-weight:600;color:var(--heading);margin-bottom:4px;">Collection Postman</div><a href="#" style="font-size:12px;">Importer la collection →</a></div></div>
+        <div class="auth-card"><div class="auth-icon">📦</div><div><div style="font-size:13px;font-weight:600;color:var(--heading);margin-bottom:4px;">Jeux de données sandbox</div><a href="#" style="font-size:12px;">Parcourir les données →</a></div></div>
+      </div>
+    </div>
+
+    <div class="docs-section" id="auth">
+      <h2>Authentification</h2>
+      <p style="font-size:14px;margin-bottom:16px;">Toutes les requêtes API nécessitent un token Bearer transmis dans l'en-tête <code style="font-family:'JetBrains Mono',monospace;color:var(--cyan);">Authorization</code>. Les clés API sont scoped par espace de travail et préfixées par <code style="font-family:'JetBrains Mono',monospace;color:var(--cyan);">sk_live_</code> en production ou <code style="font-family:'JetBrains Mono',monospace;color:var(--cyan);">sk_test_</code> en sandbox.</p>
+      <div class="endpoint-block">
+        <div class="code-block-docs"><span class="comment"># Exemple de requête authentifiée</span>
+<span class="kw">curl</span> -X POST https://api.shok-is.com/v1/predict \
+  -H <span class="str">"Authorization: Bearer sk_live_••••••••••••"</span> \
+  -H <span class="str">"Content-Type: application/json"</span> \
+  -H <span class="str">"X-Workspace-ID: ws_9f3a21bc"</span> \
+  -d '<span class="str">{...}</span>'</div>
+      </div>
+      <div class="alert-warn alert-box">⚠️ N'exposez jamais votre clé <code style="font-family:'JetBrains Mono',monospace;">sk_live_</code> dans du code client. Utilisez des variables d'environnement ou un gestionnaire de secrets.</div>
+    </div>
+
+    <div class="docs-section" id="predict">
+      <h2>POST /v1/predict</h2>
+      <p style="font-size:14px;margin-bottom:16px;">Soumet une requête de prédiction synchrone. Retourne un vecteur de prédiction typé avec score de confiance et pondérations d'attribution. Latence médiane : <strong style="color:var(--cyan);">&lt;50ms</strong>.</p>
+
+      <div class="endpoint-block">
+        <div class="endpoint-header">
+          <span class="method-tag method-post">POST</span>
+          <span class="endpoint-path">/v1/predict</span>
+          <span class="endpoint-desc">Inférence synchrone</span>
+        </div>
+        <div class="code-block-docs"><span class="comment">// Corps de la requête</span>
+{
+  <span class="key">"model_id"</span>: <span class="str">"mdl_revenue_churn_v3"</span>,       <span class="comment">// requis</span>
+  <span class="key">"input_vector"</span>: {                          <span class="comment">// requis</span>
+    <span class="key">"tenure_days"</span>: <span class="num">487</span>,
+    <span class="key">"mrr_eur"</span>: <span class="num">1240.00</span>,
+    <span class="key">"feature_usage_score"</span>: <span class="num">0.83</span>,
+    <span class="key">"last_login_delta"</span>: <span class="num">12</span>
+  },
+  <span class="key">"output_format"</span>: <span class="str">"typed"</span>,              <span class="comment">// "typed" | "raw" | "verbose"</span>
+  <span class="key">"confidence_threshold"</span>: <span class="num">0.75</span>           <span class="comment">// optionnel, défaut: 0.5</span>
+}</div>
+      </div>
+
+      <h3 style="font-size:15px;margin:24px 0 12px;">Paramètres de requête</h3>
+      <table class="params-table">
+        <thead><tr><th>Paramètre</th><th>Type</th><th>Obligatoire</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td class="param-name">model_id</td><td><span class="param-type">string</span></td><td><span class="param-req">Requis</span></td><td style="color:var(--text);font-size:13px;">Identifiant versionné du modèle. Format : <code style="font-family:'JetBrains Mono',monospace;color:var(--cyan);">mdl_{nom}_{version}</code></td></tr>
+          <tr><td class="param-name">input_vector</td><td><span class="param-type">object</span></td><td><span class="param-req">Requis</span></td><td style="color:var(--text);font-size:13px;">Paires clé-valeur des noms de features et leurs valeurs. Doit correspondre au schéma attendu par le modèle.</td></tr>
+          <tr><td class="param-name">output_format</td><td><span class="param-type">string</span></td><td><span class="param-opt">Optionnel</span></td><td style="color:var(--text);font-size:13px;"><code style="font-family:'JetBrains Mono',monospace;color:var(--cyan);">typed</code> (défaut), <code style="font-family:'JetBrains Mono',monospace;color:var(--cyan);">raw</code>, ou <code style="font-family:'JetBrains Mono',monospace;color:var(--cyan);">verbose</code> (inclut les valeurs SHAP).</td></tr>
+          <tr><td class="param-name">confidence_threshold</td><td><span class="param-type">float</span></td><td><span class="param-opt">Optionnel</span></td><td style="color:var(--text);font-size:13px;">Confiance minimale pour retourner une prédiction. Défaut : 0.5. Plage : 0.0–1.0.</td></tr>
+        </tbody>
+      </table>
+
+      <div class="endpoint-block" style="margin-top:24px;">
+        <div class="endpoint-header"><span style="font-size:11px;font-weight:700;color:var(--green);font-family:'JetBrains Mono',monospace;">200 OK</span><span class="endpoint-desc">Prédiction réussie</span></div>
+        <div class="code-block-docs">{
+  <span class="key">"request_id"</span>: <span class="str">"req_7KqpZ2mNxT"</span>,
+  <span class="key">"model_version"</span>: <span class="str">"3.4.1"</span>,
+  <span class="key">"prediction"</span>: <span class="val">"HIGH_CHURN_RISK"</span>,
+  <span class="key">"confidence"</span>: <span class="num">0.91</span>,
+  <span class="key">"vector_weights"</span>: {
+    <span class="key">"feature_usage_score"</span>: <span class="num">0.44</span>,
+    <span class="key">"last_login_delta"</span>: <span class="num">0.33</span>,
+    <span class="key">"tenure_days"</span>: <span class="num">0.14</span>,
+    <span class="key">"mrr_eur"</span>: <span class="num">0.09</span>
+  },
+  <span class="key">"latency_ms"</span>: <span class="num">43</span>,
+  <span class="key">"timestamp"</span>: <span class="str">"2025-11-04T09:17:33.241Z"</span>
+}</div>
+      </div>
+    </div>
+
+    <div class="docs-section" id="errors">
+      <h2>Codes d'erreur</h2>
+      <table class="params-table">
+        <thead><tr><th>Code</th><th>Statut HTTP</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td class="param-name">authentication_error</td><td style="font-size:13px;color:var(--text);">401</td><td style="font-size:13px;color:var(--text);">Clé API invalide ou absente.</td></tr>
+          <tr><td class="param-name">model_not_found</td><td style="font-size:13px;color:var(--text);">404</td><td style="font-size:13px;color:var(--text);">Le model_id spécifié n'existe pas dans votre espace de travail.</td></tr>
+          <tr><td class="param-name">schema_mismatch</td><td style="font-size:13px;color:var(--text);">422</td><td style="font-size:13px;color:var(--text);">L'input_vector ne correspond pas au schéma de features attendu par le modèle.</td></tr>
+          <tr><td class="param-name">rate_limit_exceeded</td><td style="font-size:13px;color:var(--text);">429</td><td style="font-size:13px;color:var(--text);">Limite de débit de votre plan dépassée. Réessayez après la valeur de l'en-tête X-RateLimit-Reset.</td></tr>
+          <tr><td class="param-name">inference_timeout</td><td style="font-size:13px;color:var(--text);">504</td><td style="font-size:13px;color:var(--text);">Le modèle a mis plus de 30 secondes à répondre. Réessayez ou contactez le support.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="docs-section" id="rate-limits">
+      <h2>Limites de débit</h2>
+      <p style="font-size:14px;margin-bottom:16px;">Les limites sont appliquées par clé API, par minute. Les requêtes dépassant la limite retournent un statut <code style="font-family:'JetBrains Mono',monospace;color:var(--cyan);">429</code> avec un en-tête <code style="font-family:'JetBrains Mono',monospace;color:var(--cyan);">Retry-After</code>.</p>
+      <table class="params-table">
+        <thead><tr><th>Plan</th><th>Requêtes / min</th><th>Burst</th><th>Quota mensuel</th></tr></thead>
+        <tbody>
+          <tr><td style="font-size:13px;color:var(--text);">Démarrage</td><td style="font-size:13px;color:var(--text);">60</td><td style="font-size:13px;color:var(--text);">—</td><td style="font-size:13px;color:var(--text);">1 000</td></tr>
+          <tr><td style="font-size:13px;color:var(--text);">Standard</td><td style="font-size:13px;color:var(--text);">500</td><td style="font-size:13px;color:var(--text);">750</td><td style="font-size:13px;color:var(--text);">100 000</td></tr>
+          <tr><td style="font-size:13px;color:var(--text);">Entreprise</td><td style="font-size:13px;color:var(--cyan);font-weight:600;">Personnalisé</td><td style="font-size:13px;color:var(--cyan);font-weight:600;">Négocié</td><td style="font-size:13px;color:var(--cyan);font-weight:600;">Illimité</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="docs-section" id="sdk-python">
+      <h2>SDK Python</h2>
+      <div class="endpoint-block">
+        <div class="code-block-docs"><span class="comment"># Installation</span>
+<span class="kw">pip install</span> shokintelligence
+
+<span class="comment"># Utilisation de base</span>
+<span class="kw">import</span> shokintelligence <span class="kw">as</span> shok
+
+client = shok.<span class="val">Client</span>(api_key=<span class="str">"sk_live_••••"</span>)
+
+result = client.<span class="val">predict</span>(
+    model_id=<span class="str">"mdl_churn_v3"</span>,
+    input_vector={<span class="str">"tenure_days"</span>: <span class="num">487</span>}
+)
+
+<span class="kw">print</span>(result.prediction)    <span class="comment"># HIGH_CHURN_RISK</span>
+<span class="kw">print</span>(result.confidence)    <span class="comment"># 0.91</span>
+<span class="kw">print</span>(result.latency_ms)    <span class="comment"># 43</span></div>
+      </div>
+    </div>
+
+    <div class="docs-section" id="sdk-node">
+      <h2>SDK Node.js</h2>
+      <div class="endpoint-block">
+        <div class="code-block-docs"><span class="comment">// Installation</span>
+<span class="kw">npm install</span> @shok-is/sdk
+
+<span class="comment">// Utilisation de base</span>
+<span class="kw">import</span> { ShokClient } <span class="kw">from</span> <span class="str">'@shok-is/sdk'</span>;
+
+<span class="kw">const</span> client = <span class="kw">new</span> <span class="val">ShokClient</span>({ apiKey: <span class="str">'sk_live_••••'</span> });
+
+<span class="kw">const</span> result = <span class="kw">await</span> client.<span class="val">predict</span>({
+  model_id: <span class="str">'mdl_churn_v3'</span>,
+  input_vector: { tenure_days: <span class="num">487</span> }
+});
+
+console.<span class="val">log</span>(result.prediction);  <span class="comment">// HIGH_CHURN_RISK</span></div>
+      </div>
+    </div>
+
+    <div class="docs-section" id="sdk-go">
+      <h2>SDK Go</h2>
+      <div class="endpoint-block">
+        <div class="code-block-docs"><span class="comment">// Installation</span>
+<span class="kw">go get</span> github.com/shok-is/go-sdk
+
+<span class="comment">// Utilisation de base</span>
+<span class="kw">import</span> shok <span class="str">"github.com/shok-is/go-sdk"</span>
+
+client := shok.<span class="val">NewClient</span>(<span class="str">"sk_live_••••"</span>)
+
+result, err := client.<span class="val">Predict</span>(ctx, &shok.PredictRequest{
+  ModelID:     <span class="str">"mdl_churn_v3"</span>,
+  InputVector: <span class="kw">map</span>[string]<span class="kw">interface</span>{}{
+    <span class="str">"tenure_days"</span>: <span class="num">487</span>,
+  },
+})
+
+fmt.<span class="val">Println</span>(result.Prediction) <span class="comment">// HIGH_CHURN_RISK</span></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="footer-placeholder"></div>
+<script src="../shared.js"></script>
+<script>
+const sections = document.querySelectorAll('.docs-section');
+const links = document.querySelectorAll('.sidebar-link');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => { if(window.scrollY >= s.offsetTop - 100) current = s.id; });
+  links.forEach(l => { l.classList.toggle('active', l.getAttribute('href') === '#'+current); });
+});
+</script>
+</body>
+</html>
