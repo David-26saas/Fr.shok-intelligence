@@ -28,7 +28,7 @@ const FOOTER = `
         <p>Infrastructure d'Intelligence Prédictive. Conçue pour les secteurs régulés et les équipes d'ingénierie qui exigent fiabilité et performance.</p>
         <div class="footer-legal">
           SHOK INTELLIGENCE SYSTEMS LTD — filiale de AURA OPERATIONS LTD<br>
-          Immatriculée en Angleterre &amp; au Pays de Galles · N° 17037746<br>
+          Immatriculée en Angleterre &amp; au Pays de Galles · N° 17145809<br>
           128 City Road, London, EC1V 2NX, Royaume-Uni<br>
           Tél : +44 7782 256996 · <a href="mailto:contact@shok-intelligence.com" style="color:var(--indigo);">contact@shok-intelligence.com</a>
         </div>
