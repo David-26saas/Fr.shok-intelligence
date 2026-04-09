@@ -63,7 +63,7 @@ const FOOTER = `
       </div>
     </div>
     <div class="footer-bottom">
-      <span class="footer-copy">© 2026 Shok Intelligence Systems Ltd. Shok-Intelligence est une marque commerciale de AURA OPERATIONS LTD, immatriculée en Angleterre et au Pays de Galles (N° 17037746). Siège social : 128 City Road, London, EC1V 2NX, Royaume-Uni.</span>
+      <span class="footer-copy">© 2026 Shok Intelligence Systems Ltd. Shok-Intelligence est une marque commerciale de AURA OPERATIONS LTD, immatriculée en Angleterre et au Pays de Galles (N° 17145809). Siège social : 128 City Road, London, EC1V 2NX, Royaume-Uni.</span>
       <span class="footer-status">Tous les systèmes opérationnels</span>
       <div class="footer-badges">
         <span class="footer-badge">SOC2</span>
