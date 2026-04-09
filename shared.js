@@ -30,7 +30,7 @@ const FOOTER = `
           SHOK INTELLIGENCE SYSTEMS LTD — filiale de AURA OPERATIONS LTD<br>
           Immatriculée en Angleterre &amp; au Pays de Galles · N° 17145809<br>
           128 City Road, London, EC1V 2NX, Royaume-Uni<br>
-          Tél : +44 7782 256996 · <a href="mailto:contact@shok-intelligence.com" style="color:var(--indigo);">contact@shok-intelligence.com</a>
+          Tél : +44 7782 256945 · <a href="mailto:contact@shok-intelligence.com" style="color:var(--indigo);">contact@shok-intelligence.com</a>
         </div>
       </div>
       <div class="footer-col">
